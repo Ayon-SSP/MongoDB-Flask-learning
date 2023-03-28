@@ -1,18 +1,20 @@
+// Display
+// document.getElementById('display').innerHTML = `<li class="list-group-item">id : ${data.id} Name : ${data.name} Genre : ${data.email} Game : ${data.password}</li>`
+// document.getElementById('display').innerHTML = `<li class="list-group-item"> Content </li>`
 
+fetch(`http://127.0.0.1:5000`)
+.then(res => res.json())
+.then((data) => {
+    console.log(data)
+    // document.getElementById('display').innerHTML = `<li class="list-group-item">id : ${data.id} Name : ${data.name} Email : ${data.email} Password : ${data.password}</li>`
 
-// function retrieveName(e) {
-//     e.preventDefault();
-//     let id = document.getElementById('name').id;
-
-//     fetch(`http://localhost:3000/${id}`)
-//     .then(res => res.json())
-//     .then((data) => {
-//         // document.getElementById('result').innerHTML = `id : ${data.id} Name : ${data.name} Genre : ${data.email} Game : ${data.password}</li>`
-//         document.getElementById('result').innerHTML = `id : ${data.id} Name : ${data.name} Genre : ${data.email} Game : ${data.password}</li>`
-//     })
-// }
-
-
+    let dis= "";
+    for (var i = 0; i < data.length; i++) {
+        // console.log(data[i].name + " is " + data[i].age + " years old.");
+        dis += `<li class="list-group-item">id : ${data[i].id} Name : ${data[i].name} Email : ${data[i].email} Password : ${data[i].password}</li>`
+    }
+    document.getElementById('display').innerHTML = dis
+})
 
 // GET
 document.getElementById('formData').addEventListener('submit', retrieveName);
@@ -24,7 +26,7 @@ function retrieveName(e) {
     .then(res => res.json())
     .then((data) => {
         console.log(data)
-        document.getElementById('result').innerHTML = `<li class="list-group-item">id : ${data.id} Name : ${data.name} Genre : ${data.email} Game : ${data.password}</li>`
+        document.getElementById('result').innerHTML = `<li class="list-group-item">id : ${data.id} Name : ${data.name} Email : ${data.email} Password : ${data.password}</li>`
     })
 }
 

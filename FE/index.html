@@ -21,6 +21,7 @@
             </a>
         </div>
     </nav>
+    <br>
 
 
     <!-- <form id="formData" action="">
@@ -29,8 +30,10 @@
     </form>
     <br>
     <div id="result"></div> -->
-    <br>
+ 
 
+    <hr>
+    <br>
     <div class="container">
         <a class="btn btn-info" data-bs-toggle="collapse" href="#retrieveForm" role="button" aria-expanded="false" aria-controls="retrieveForm">
             GET
@@ -48,7 +51,7 @@
         <ul class="list-group" id="result"></ul>
         <hr>
     </div>
-    
+
 
     <div class="container">
         <a class="btn btn-info" data-bs-toggle="collapse" href="#postCollapse" role="button" aria-expanded="false" aria-controls="postCollapse">
@@ -60,32 +63,34 @@
             <form class="form-group" id="postData">
                 <label for="id">Enter ID </label>
                 <input type="text" name="id" id="postId" class="form-control"><br>
-                
+
                 <label for="name">Enter Name </label>
                 <input type="text" name="name" id="postName" class="form-control"><br>
-                
+
                 <label for="email">Enter Email </label>
                 <input type="text" name="email" id="postEmail" class="form-control"><br>
-                
+
                 <label for="password">Enter Password </label>
                 <input type="text" name="password" id="postPassword" class="form-control"><br>
-                
-                
+
+
                 <button class="btn btn-info" type="submit">Submit</button>
             </form>
         </div>
         <br>
         <div id="postResponse"></div>
+        <hr>
     </div>
-    
 
 
+    <div class="container">
+        <ul class="list-group" id="display"></ul>
+    </div>
 
 
 
     <!-- <p>Result: <span id="result"></span></p> -->
 
-    <hr>
     <script src="./script.js" async defer></script>
 </body>
 </html>
