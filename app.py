@@ -5,7 +5,7 @@ from flask_cors import CORS, cross_origin
 app =  Flask(__name__)
 cors = CORS(app)
 app.config['MONGO_URI'] = 'mongodb://localhost:27017/users-db'
-app.config['CORS_HEADERS'] = 'Content-Type'
+app.config['CORS_Headers'] = 'Content-Type'
 mongo = PyMongo(app)
 
 
