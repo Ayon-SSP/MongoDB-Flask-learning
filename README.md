@@ -25,9 +25,6 @@ sudo service mongodb restart
 sudo service mongodb status
 ```
 
-
-
-```
 ## MongoDB shell
 ```bash
 mongo
@@ -103,7 +100,6 @@ show collections
 ### delete a collection
 db.<collection_name>.drop()
 ```
-=======
 ```
 sudo apt-get install mongodb
 ```
