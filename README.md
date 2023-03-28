@@ -5,7 +5,6 @@
 <!-- ![image](https://user-images.githubusercontent.com/80549753/228182747-ef0bcff4-89f4-479e-ab49-e96921a49e87.png) -->
 
 ### MongoDB on  Ubuntu
-<<<<<<< HEAD
 ```bash
 sudo apt-get install mongodb
 ```
@@ -24,6 +23,17 @@ sudo service mongodb restart
 ### To check status of Service
 ```bash
 sudo service mongodb status
+```
+
+
+> To make unique id database name foo with collection users
+```bash
+use foo
+db.users.insert({name:"Nm1",id:"200303124271"});
+db.users.createIndex({id: 1}, {unique: true});
+db.users.insert({name:"Nm2",id:"200303124270"});
+db.users.insert({name:"Nm3",id:"200303124270"}); // Error
+```
 ```
 ## MongoDB shell
 ```bash
