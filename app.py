@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, redirect, url_for
 from flask_pymongo import PyMongo
 
 app =  Flask(__name__)
@@ -6,7 +6,9 @@ app.config['MONGO_URI'] = 'mongodb://localhost:27017/users-db'
 
 mongo = PyMongo(app)
 
-@app.route('/', methods=['GET'])
+
+# GET /users - Returns a list of all users.
+@app.route('/users/', methods=['GET'])
 def retrieveAll():
     holder = []
     currentCollection = mongo.db.users
@@ -17,9 +19,8 @@ def retrieveAll():
     return jsonify(holder)
 
 
-
-
-@app.route('/<id>', methods=['GET'])
+# GET /users/<id> - Returns the user with the specified ID.
+@app.route('/users/<id>', methods=['GET'])
 def retrieveFromId(id):
     currentCollection = mongo.db.users
     data = currentCollection.find_one({"id": id})
@@ -29,7 +30,7 @@ def retrieveFromId(id):
         return jsonify({'message': 'User not found'})
 
 
-
+# POST /users - Creates a new user with the specified data.
 @app.route('/postData', methods = ['POST'])
 def postData():
     currentCollection = mongo.db.users
@@ -45,12 +46,36 @@ def postData():
         return jsonify({'message': 'Error'})
 
 
+# PUT /users/<id> - Updates the user with the specified ID with the new data.
+@app.route('/deleteData/<id>', methods = ['DELETE'])
+def deleteData(id):
+    currentCollection = mongo.db.users
+    currentCollection.delete_one({'id' : id})
+    # return jsonify({'message': 'User deleted successfully', 'id' : id})
+    return redirect(url_for('retrieveAll'))
 
 
-
-
-
-
+# DELETE /users/<id> - Deletes the user with the specified ID.
+@app.route('/users/update/<id>', methods = ['PUT'])
+def updateData(id):
+    currentCollection = mongo.db.users
+    if request.json['id']:
+        updatedId = request.json['id']
+        currentCollection.update_one({'id': id}, {"$set": {'id': updatedId}})
+    if request.json['name']:
+        updatedName = request.json['name']
+        currentCollection.update_one({'id': id}, {"$set": {'name': updatedName}})
+    if request.json['email']:
+        updatedEmail = request.json['email']
+        currentCollection.update_one({'id': id}, {"$set": {'email': updatedEmail}})
+    if request.json['password']:
+        updatedPassword = request.json['password']
+        updatedPasswordCheck = request.json['passwordCheck']
+        if updatedPassword == updatedPasswordCheck:
+            currentCollection.update_one({'id': id}, {"$set": {'password': updatedPassword}})
+        else:
+            return jsonify({'message': 'Passwords do not match'})
+    return redirect(url_for('retrieveAll'))
 
 
 
