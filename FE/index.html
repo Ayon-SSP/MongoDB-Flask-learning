@@ -30,9 +30,8 @@
     </form>
     <br>
     <div id="result"></div> -->
- 
 
-    <hr>
+
     <br>
     <div class="container">
         <a class="btn btn-info" data-bs-toggle="collapse" href="#retrieveForm" role="button" aria-expanded="false" aria-controls="retrieveForm">
@@ -81,6 +80,71 @@
         <div id="postResponse"></div>
         <hr>
     </div>
+
+
+    <div class="container">
+        <a class="btn btn-info" data-bs-toggle="collapse" href="#updateColaps" role="button" aria-expanded="false" aria-controls="updateColaps">
+            UPDATE
+        </a>
+        <br>
+        <div class="collapse" id="updateColaps">
+            <br>
+            <form class="form-group" id="updateData">
+                <label for="CurrUpdatedtId">CURR Enter ID </label>
+                <input type="text" name="CurrUpdatedtId" id="CurrUpdatedtId" class="form-control"><br>
+                <br>
+                <label for="updatedtId"><b>Fill the required fields to update : </b></label><br>
+                <br>
+                <label for="updatedtId">Enter ID </label>
+                <input type="text" name="updatedtId" id="updatedtId" class="form-control"><br>
+
+                <label for="updatedtName">Enter Name </label>
+                <input type="text" name="updatedtName" id="updatedtName" class="form-control"><br>
+
+                <label for="updatedtEmail">Enter Email </label>
+                <input type="text" name="updatedtEmail" id="updatedtEmail" class="form-control"><br>
+
+                <label for="updatedtPassword">Enter Password </label>
+                <input type="text" name="updatedtPassword" id="updatedtPassword" class="form-control"><br>
+
+                <label for="updatedtRePassword">ReEnter Password </label>
+                <input type="text" name="updatedtRePassword" id="updatedtRePassword" class="form-control"><br>
+
+
+                <button class="btn btn-info" type="submit">Submit</button>
+            </form>
+        </div>
+        <br>
+        <div id="postResponse"></div>
+        <hr>
+    </div>
+
+
+
+
+
+    <div class="container">
+        <a class="btn btn-info" data-bs-toggle="collapse" href="#DeleteById" role="button" aria-expanded="false" aria-controls="DeleteById">
+            DELETE
+        </a>
+        <br>
+        <div class="collapse" id="DeleteById">
+            <br>
+            <form class="form-group" id="delData">
+                <label for="id">Enter Id to Delete</label>
+                <input type="text" name="name" id="delId" class="form-control"><br>
+                <button class="btn btn-info" type="submit">Submit</button>
+            </form>
+        </div>
+        <br>
+        <ul class="list-group" id="DelRes"></ul>
+        <hr>
+    </div>
+
+
+
+
+
 
 
     <div class="container">
