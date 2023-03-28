@@ -43,6 +43,9 @@ use <database_name>
 ### To create a collection
 db.createCollection("<collection_name>")
 
+### delete a collection
+db.<collection_name>.drop()
+
 ### To insert a document
 db.<collection_name>.insertOne({<key>:<value>})
 
@@ -92,8 +95,13 @@ db.users.find()
 db.users.find({"name":{$exists:true}})
 db.users.find({"name":{$exists:true},"age":20})
 
-### to show the collectiosn
+
+
+
+### to show the collections
 show collections
+### delete a collection
+db.<collection_name>.drop()
 ```
 =======
 ```
