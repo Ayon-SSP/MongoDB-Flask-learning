@@ -26,14 +26,7 @@ sudo service mongodb status
 ```
 
 
-> To make unique id database name foo with collection users
-```bash
-use foo
-db.users.insert({name:"Nm1",id:"200303124271"});
-db.users.createIndex({id: 1}, {unique: true});
-db.users.insert({name:"Nm2",id:"200303124270"});
-db.users.insert({name:"Nm3",id:"200303124270"}); // Error
-```
+
 ```
 ## MongoDB shell
 ```bash
@@ -114,3 +107,22 @@ sudo service mongodb start
 ![image](https://user-images.githubusercontent.com/80549753/228186313-bde7f4de-0884-45f2-8752-f5a35c82e86b.png)
 
 ![image](https://user-images.githubusercontent.com/80549753/228191657-300c6fad-d484-44ae-af2c-e90da6d6ba30.png)
+
+
+### To Make a Unique ID [Link](https://github.com/Ayon-SSP/MongoDB-Flask/blob/master/Readmes/UNIQUE_KEY.md)
+
+# UNIQUE KEY 🗝️
+> To make unique id database name foo with collection users
+> To Make a Unique ID [Link](https://github.com/Ayon-SSP/MongoDB-Flask/blob/master/Readmes/UNIQUE_KEY.md)
+```bash
+use foo
+db.users.insert({name:"Nm1",id:"200303124271"});
+db.users.createIndex({id: 1}, {unique: true});
+db.users.insert({name:"Nm2",id:"200303124270"});
+db.users.insert({name:"Nm3",id:"200303124270"}); // Error
+```
+![image](https://user-images.githubusercontent.com/80549753/228203096-e4a3cd31-ec6e-4a7c-90d7-89e796dac8cf.png)
+
+
+
+
