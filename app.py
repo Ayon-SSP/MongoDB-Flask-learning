@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request, redirect, url_for
 from flask_pymongo import PyMongo
 from flask_cors import CORS, cross_origin
 
-app =  Flask(__name__)
+app = Flask(__name__)
 cors = CORS(app)
 app.config['MONGO_URI'] = 'mongodb://localhost:27017/users-db'
 app.config['CORS_Headers'] = 'Content-Type'
