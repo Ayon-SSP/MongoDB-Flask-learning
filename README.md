@@ -14,3 +14,5 @@ sudo service mongodb start
 ```
 ![image](https://user-images.githubusercontent.com/80549753/228185731-b8774702-5ad9-4c74-91f1-3877944623fc.png)
 ![image](https://user-images.githubusercontent.com/80549753/228186313-bde7f4de-0884-45f2-8752-f5a35c82e86b.png)
+
+![image](https://user-images.githubusercontent.com/80549753/228191657-300c6fad-d484-44ae-af2c-e90da6d6ba30.png)
