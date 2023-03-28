@@ -141,5 +141,20 @@ db.users.getIndexes() // to check existing Keys
 ![image](https://user-images.githubusercontent.com/80549753/228203096-e4a3cd31-ec6e-4a7c-90d7-89e796dac8cf.png)
 
 
+## Cors Error 💀
+```python
+from flask_cors import CORS, cross_origin
+cors = CORS(app)
 
-
+app.config['CORS_Headers'] = 'Content-Type'
+# GET /users/<id> - Returns the user with the specified ID.
+@app.route('/<id>', methods=['GET'])
+@cross_origin()
+def retrieveFromId(id):
+    currentCollection = mongo.db.users
+    data = currentCollection.find_one({"id": id})
+    if data:
+        return jsonify({'id': data['id'], 'name': data['name'], 'email': data['email'], 'password': data['password']})
+    else:
+        return jsonify({'message': 'User not found'})
+```
