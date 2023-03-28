@@ -91,10 +91,19 @@ db.users.find({"name":"John"})
 db.users.find()
 db.users.find({"name":{$exists:true}})
 db.users.find({"name":{$exists:true},"age":20})
+db.mycollection.remove({age: {$gt: 30}})
+
+db.users.insertMany([{"name":"John","age":20},{"name":"John","age":20},{"name":"John","age":20}])
+db.users.fine().limit(2);
+db.users.fine().sort({name:-1}).limit(3);
+db.users.fine().sort({age: 1, name:-1 }).limit(3).skip(1);
+
+db.users.find({name: /^J/}) // starts with J
+db.users.find({name: /n$/}) // ends with n
+db.users.find({name: "AYON"}, {name: 1, age: 1, _id: 0}) // only name and age & don't give me id
 
 
-
-
+db.users.remove({"id": {$eq: "200303124271"}}) // to remove a document
 ### to show the collections
 show collections
 ### delete a collection
