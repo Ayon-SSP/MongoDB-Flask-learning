@@ -4,6 +4,8 @@
 
 <!-- ![image](https://user-images.githubusercontent.com/80549753/228182747-ef0bcff4-89f4-479e-ab49-e96921a49e87.png) -->
 
+# DataBase -> Collection -> Document
+
 ### MongoDB on  Ubuntu
 ```bash
 sudo apt-get install mongodb
