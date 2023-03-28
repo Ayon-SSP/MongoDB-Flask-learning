@@ -18,5 +18,41 @@ def retrieveAll():
 
 
 
+
+@app.route('/<id>', methods=['GET'])
+def retrieveFromId(id):
+    currentCollection = mongo.db.users
+    data = currentCollection.find_one({"id": id})
+    if data:
+        return jsonify({'id': data['id'], 'name': data['name'], 'email': data['email'], 'password': data['password']})
+    else:
+        return jsonify({'message': 'User not found'})
+
+
+
+@app.route('/postData', methods = ['POST'])
+def postData():
+    currentCollection = mongo.db.users
+    id = request.json['id']
+    name = request.json['name']
+    mail = request.json['email']
+    password = request.json['password']
+
+    if request.method == 'POST':
+        currentCollection.insert_one({'id': id, 'name': name, 'email': mail, 'password': password})
+        return jsonify({'message': 'User created successfully', 'id': id, 'name': name, 'email': mail, 'password': password})
+    else:
+        return jsonify({'message': 'Error'})
+
+
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
