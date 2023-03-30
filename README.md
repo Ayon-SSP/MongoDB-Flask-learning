@@ -158,3 +158,19 @@ def retrieveFromId(id):
     else:
         return jsonify({'message': 'User not found'})
 ```
+## if error
+```
+❯ mongo
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+2023-03-30T08:32:06.732+0530 W NETWORK  [thread1] Failed to connect to 127.0.0.1:27017, in(checking socket for error after poll), reason: Connection refused
+2023-03-30T08:32:06.733+0530 E QUERY    [thread1] Error: couldn't connect to server 127.0.0.1:27017, connection attempt failed :
+connect@src/mongo/shell/mongo.js:257:13
+@(connect):1:6
+exception: connect failed
+```
+> Restart the mongodb or maybe your window mongodb is using 27017. change the port
+```bash
+sudo service mongodb restart
+mongo --port <port_number>
+```
